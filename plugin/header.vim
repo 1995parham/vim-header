@@ -3,7 +3,7 @@
 " Last Change:	2015 Sep 24
 " Maintainer:	Parham Alvani <parham.alvani@gmail.com>
 
-let s:user = system ("id -un | tr -d '\n'")
-let s:email = ''
-let s:install_dir = expand('<sfile>:p:h') . '/bin'
-autocmd bufnewFile *.c,*.cpp,*.h,*.s,*.S,*.v,*.go,*.py,*.java,*.asm,*.bash,*.vim,*.js exe "read !" . s:install_dir . "copyrighter.py --string " . " --user=" . s:user . " --email=" . s:email . " " . @%
+let g:header_user = system ("id -un | tr -d '\n'")
+let g:header_email = ''
+let s:bin_dir = expand('<sfile>:p:h') . '/bin'
+autocmd bufnewFile *.c,*.cpp,*.h,*.s,*.S,*.v,*.go,*.py,*.java,*.asm,*.bash,*.vim,*.js exe "read !" . s:bin_dir . "copyrighter.py --string " . " --user=" . g:header_user . " --email=" . g:header_email . " " . @%
