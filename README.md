@@ -31,7 +31,9 @@ VTL header.
 for header template sample see *copyrighter/conf/header*
 
 ## Dependencies
-You must have **python3** installed on your machine ....
+You must have **python3** installed on your machine and you need
+[airspeed](https://github.com/purcell/airspeed)
+package installed on your python .. see :)
 
 ## Contribution
 if you have time ... nothing else just time :) you can do what
