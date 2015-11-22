@@ -13,7 +13,6 @@ import argparse
 import configparser
 import datetime
 import os
-
 import airspeed
 
 context = {}
@@ -24,7 +23,7 @@ def update_source(srcfile: str, str_based: bool) -> None:
     """
 
     :param srcfile: name of target source file
-    :param str_based: showing test mode :)
+    :param str_based: print header on stdout :) if true
     :return: nothing
     """
     if os.path.splitext(srcfile)[-1] in headers:
@@ -46,7 +45,7 @@ def update_source(srcfile: str, str_based: bool) -> None:
         return
 
 
-parser = argparse.ArgumentParser(description="Copyright advance header adder script")
+parser = argparse.ArgumentParser(description="Copyright: Advance-Dummy source codes header generator")
 parser.add_argument(
     'files',
     metavar='F',
@@ -55,7 +54,7 @@ parser.add_argument(
     help='Target files')
 parser.add_argument('--name', dest='name', type=str, default='', help="user.name")
 parser.add_argument('--email', dest='email', type=str, default='', help="user.email")
-parser.add_argument('--test', dest='str_based', action='store_true', default=False, help="Print header on stdout")
+parser.add_argument('--string', dest='str_based', action='store_true', default=False, help="Print header on stdout")
 parser.add_argument('--config-path', dest='cnfg_path', type=str,
                     default=os.path.expanduser('~/.copyrighter/'))
 
