@@ -12,7 +12,8 @@ cd copyrighter
 if [ -d "$HOME/.copyrighter" ]; then
 	sudo python3 setup.py install_scripts
 else
-	sudo python3 setup.py install
+	sudo python3 setup.py install_scripts
+	python3 setup.py install_data
 fi
 if [ $? ]; then
     echo "successful copyrighter installation"
