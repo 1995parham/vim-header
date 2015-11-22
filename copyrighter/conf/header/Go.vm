@@ -1,0 +1,7 @@
+// +========================================
+// | Author:        $user.name ($user.mail)
+// |
+// | Creation Date: $time.strftime("%d-%m-%Y")
+// |
+// | File Name:     $file.name
+// +========================================

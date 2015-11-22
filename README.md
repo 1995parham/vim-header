@@ -8,7 +8,7 @@ for vim-header plugin as follow
 g:header_user = "Your Name"
 g:header_email = "youremail@mail.com"
 ```
-## Header Configuration
+## Header Template Configuration
 You can create new header template for your language
 or modify existing ones. Our header template write with
 Velocity Template Language (VTL). see
@@ -20,3 +20,13 @@ VTL header.
 |:-------------:|:---------------:|
 | `$user`       | User details    |
 | `$time`       | Datetime object |
+| `$file`       | Target file data|
+
+for header template sample see *copyrighter/conf/header*
+
+## Dependencies
+You must have **python3** installed on your machine ....
+
+## Contribution
+if you have time ... nothing else just time :) you can do what
+you want with this dummy project :)

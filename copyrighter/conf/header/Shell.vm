@@ -1,3 +1,4 @@
+#!/bin/
 # In The Name Of God
 # ========================================
 # [] File Name : $file.name
@@ -6,4 +7,3 @@
 #
 # [] Created By : $user.name ($user.email)
 # =======================================
-__author__ = '$user.name'
