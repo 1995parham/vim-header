@@ -8,7 +8,8 @@
 # [] Created By : Parham Alvani (parham.alvani@gmail.com)
 # =======================================
 echo "installing copyrighter project :D"
-python3 copyrighter/setup.py install
+cd copyrighter
+python3 setup.py install
 
 if [ $? ]; then
     echo "successful copyrighter installation"
