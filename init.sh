@@ -10,10 +10,9 @@
 echo "installing copyrighter project :D"
 cd copyrighter
 if [ -d "$HOME/.copyrighter" ]; then
-	python3 setup.py install_scripts
-	python3 setup.py install_lib
+	sudo python3 setup.py install_scripts
 else
-	python3 setup.py install
+	sudo python3 setup.py install
 fi
 if [ $? ]; then
     echo "successful copyrighter installation"
