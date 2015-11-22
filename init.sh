@@ -9,6 +9,7 @@
 # =======================================
 echo "installing copyrighter project :D"
 python3 copyrighter/setup.py install
+
 if [ $? ]; then
     echo "successful copyrighter installation"
 fi
