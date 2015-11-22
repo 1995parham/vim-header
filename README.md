@@ -2,8 +2,9 @@
 ## Introduction
 Simple header generator for vim based on python script.
 ## VIM Configuration
-In order to use copyrighter vim plugin with Plug plugin manager add
-following comamnd in your vim configuration (vimrc):
+In order to use copyrighter vim plugin with
+[Plug plugin manager](https://github.com/junegunn/vim-plug)
+add following comamnd in your vim configuration (vimrc):
 ```viml
 Plug '1995parham/vim-header', {'do': '~/.vim/plugged/vim-header/init.sh'}
 ```
