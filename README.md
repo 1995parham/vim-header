@@ -2,8 +2,13 @@
 ## Introduction
 Simple header generator for vim based on python script.
 ## VIM Configuration
+In order to use copyrighter vim plugin with Plug plugin manager add
+following comamnd in your vim configuration (vimrc):
+```viml
+Plug '1995parham/vim-header', {'do': '~/.vim/plugged/vim-header/init.sh'}
+```
 You must set your name and your email in your vim configuration (vimrc)
-for vim-header plugin as follow
+for vim-header plugin as follows:
 ```viml
 g:header_user = "Your Name"
 g:header_email = "youremail@mail.com"
