@@ -19,5 +19,5 @@ setup(
     author='Parham Alvani',
     author_email='parham.alvani@gmail.com',
     description='Advance-Dummy source codes header generator',
-    requires=['airspeed']
+    install_requires=['airspeed']
 )
