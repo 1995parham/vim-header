@@ -13,7 +13,12 @@ import argparse
 import configparser
 import datetime
 import os
-import airspeed
+
+try:
+    import airspeed
+except ImportError:
+    airspeed = None
+    quit(0)
 
 context = {}
 headers = {}
@@ -47,11 +52,11 @@ def update_source(srcfile: str, str_based: bool) -> None:
 
 parser = argparse.ArgumentParser(description="Copyright: Advance-Dummy source codes header generator")
 parser.add_argument(
-    'files',
-    metavar='F',
-    type=str,
-    nargs='+',
-    help='Target files')
+        'files',
+        metavar='F',
+        type=str,
+        nargs='+',
+        help='Target files')
 parser.add_argument('--name', dest='name', type=str, default='', help="user.name")
 parser.add_argument('--email', dest='email', type=str, default='', help="user.email")
 parser.add_argument('--string', dest='str_based', action='store_true', default=False, help="Print header on stdout")
