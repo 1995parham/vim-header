@@ -16,5 +16,16 @@ else
 	python3 setup.py install_data
 fi
 if [ $? ]; then
-    echo "successful copyrighter installation"
+    echo "copyrighter has been installed successfully"
 fi
+python3 -c "import airspeed"
+if [ $? ]; then
+	exit
+fi
+cd ..
+echo "installing airspeed dependency"
+git clone https://github.com/purcell/airspeed.git
+cd airspeed
+sudo python3 setup.py install
+cd ..
+sudo rm -Rf airspeed
