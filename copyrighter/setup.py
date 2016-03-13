@@ -8,7 +8,7 @@ for header in os.listdir('conf/header/'):
 
 setup(
     name='copyrighter',
-    version='2.0',
+    version='2.1',
     scripts=['src/scripts/copyrighter.py'],
     data_files=[
         (os.path.expanduser("~/.copyrighter"), ["conf/config.ini"]),
