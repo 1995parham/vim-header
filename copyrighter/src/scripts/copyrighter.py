@@ -7,7 +7,10 @@
 #
 # [] Created By : Parham Alvani (parham.alvani@gmail.com)
 # =======================================
-# updates the copyright information for input files
+__version__ = "2.1"
+"""
+Updates the copyright information for input files
+"""
 
 import argparse
 import configparser
@@ -35,7 +38,8 @@ def update_source(srcfile: str, str_based: bool) -> None:
 
         dest_header = headers[os.path.splitext(srcfile)[-1]]
 
-        context['file'] = {'name': os.path.split(srcfile)[1], 'path': os.path.abspath(srcfile)}
+        context['file'] = {'name': os.path.split(srcfile)[1],
+                           'path': os.path.abspath(srcfile)}
         context['time'] = datetime.datetime.now()
 
         dest_header = dest_header.merge(context)
@@ -50,16 +54,21 @@ def update_source(srcfile: str, str_based: bool) -> None:
         return
 
 
-parser = argparse.ArgumentParser(description="Copyright: Advance-Dummy source codes header generator")
-parser.add_argument(
-        'files',
-        metavar='F',
-        type=str,
-        nargs='+',
-        help='Target files')
-parser.add_argument('--name', dest='name', type=str, default='', help="user.name")
-parser.add_argument('--email', dest='email', type=str, default='', help="user.email")
-parser.add_argument('--string', dest='str_based', action='store_true', default=False, help="Print header on stdout")
+parser = argparse.ArgumentParser(
+    description="Copyright: Advance-Dummy source codes header generator")
+parser.add_argument('--version', action='version',
+                    version='%(prog)s {version}'.format(version=__version__))
+parser.add_argument('files',
+                    metavar='F',
+                    type=str,
+                    nargs='+',
+                    help='Target files')
+parser.add_argument('--name', dest='name', type=str,
+                    default='', help="user.name")
+parser.add_argument('--email', dest='email', type=str,
+                    default='', help="user.email")
+parser.add_argument('--string', dest='str_based', action='store_true',
+                    default=False, help="Print header on stdout")
 parser.add_argument('--config-path', dest='cnfg_path', type=str,
                     default=os.path.expanduser('~/.copyrighter/'))
 
@@ -81,7 +90,8 @@ for section in cnfg.sections():
             context['user']['email'] = cnfg['user']['email']
     else:
         for extension in cnfg[section]['Extension'].split(' '):
-            header = open(os.path.join(cnfg_path, cnfg[section]['File']), 'r').read()
+            header = open(os.path.join(cnfg_path,
+                                       cnfg[section]['File']), 'r').read()
             headers[extension] = airspeed.Template(header)
 
 while len(args.files) > 0:
