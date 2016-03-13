@@ -7,7 +7,7 @@
 #
 # [] Created By : Parham Alvani (parham.alvani@gmail.com)
 # =======================================
-echo "installing copyrighter project :D"
+echo "Installing Copyrighter project :D"
 cd copyrighter
 if [ -d "$HOME/.copyrighter" ]; then
 	sudo python3 setup.py install_scripts
@@ -15,15 +15,15 @@ else
 	sudo python3 setup.py install_scripts
 	python3 setup.py install_data
 fi
-if [ $? ]; then
-    echo "copyrighter has been installed successfully"
+if [ $? -eq 0 ]; then
+    echo "Copyrighter has been installed successfully"
 fi
 python3 -c "import airspeed" 2> /dev/null
 if [ $? -eq 0 ]; then
 	exit
 fi
 cd ..
-echo "installing airspeed dependency"
+echo "Installing airspeed dependency"
 if [ "$OSTYPE" == "darwin"* ]; then
 	pip3 install airspeed
 else
