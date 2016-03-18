@@ -7,15 +7,17 @@
 #
 # [] Created By : Parham Alvani (parham.alvani@gmail.com)
 # =======================================
-__version__ = "2.1"
-"""
-Updates the copyright information for input files
-"""
 
 import argparse
 import configparser
 import datetime
 import os
+
+__version__ = "2.2"
+"""
+Updates the copyright information for input files
+from configuration that can be reach at your home folder :D
+"""
 
 try:
     import airspeed
