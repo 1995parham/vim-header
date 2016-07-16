@@ -16,7 +16,10 @@ else
 	python3 setup.py install_data
 fi
 if [ $? -eq 0 ]; then
-    echo "Copyrighter has been installed successfully"
+	echo "Copyrighter has been installed successfully"
+else
+	echo "Copyrighter installation has been failed"
+	exit
 fi
 python3 -c "import airspeed" 2> /dev/null
 if [ $? -eq 0 ]; then
@@ -28,6 +31,7 @@ if [ "$OSTYPE" == "darwin"* ]; then
 	pip3 install airspeed
 else
 	sudo apt-get install --yes python3-pip
+	sudo pip3 install setuptools
 	git clone https://github.com/purcell/airspeed.git
 	cd airspeed
 	sudo python3 setup.py install
