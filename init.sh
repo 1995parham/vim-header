@@ -27,7 +27,7 @@ if [ $? -eq 0 ]; then
 fi
 cd ..
 echo "Installing airspeed dependency"
-if [ "$OSTYPE" == "darwin"* ]; then
+if [[ "$OSTYPE" == "darwin"* ]]; then
 	pip3 install airspeed
 else
 	sudo apt-get install --yes python3-pip
