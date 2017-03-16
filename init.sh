@@ -28,7 +28,11 @@ fi
 cd ..
 echo "Installing airspeed dependency"
 if [[ "$OSTYPE" == "darwin"* ]]; then
-	pip3 install airspeed
+	git clone https://github.com/purcell/airspeed.git
+	cd airspeed
+	sudo python3 setup.py install
+	cd ..
+	sudo rm -Rf airspeed
 else
 	sudo apt-get install --yes python3-pip
 	sudo pip3 install setuptools
