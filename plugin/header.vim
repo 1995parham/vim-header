@@ -10,4 +10,6 @@ if !exists('g:header_email')
 	let g:header_email = ''
 endif
 autocmd bufnewFile * exe "0read !" . "copyrighter.py --string " . " --name=" . "\"" . g:header_user . "\"" . " --email=" . "\"" . g:header_email . "\"" . " " . "\"" . @% . "\""
-command Header exe "0read !" . "copyrighter.py --string " . " --name=" . "\"" . g:header_user . "\"" . " --email=" . "\"" . g:header_email . "\"" . " " . "\"" . @% . "\""
+if !exists(":Header")
+	command Header exe "0read !" . "copyrighter.py --string " . " --name=" . "\"" . g:header_user . "\"" . " --email=" . "\"" . g:header_email . "\"" . " " . "\"" . @% . "\""
+endif
