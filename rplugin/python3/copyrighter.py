@@ -24,7 +24,7 @@ class CopyrighterPlugin:
 
         # Configurations (config.ini)
         self.headers = {}
-        cnfg_path = os.path.expanduser('~/.copyrighter/')
+        cnfg_path = os.path.join(os.path.dirname(__file__), '../../conf')
         cnfg = configparser.ConfigParser()
         cnfg.read(os.path.join(cnfg_path, "config.ini"))
         for section in cnfg.sections():
