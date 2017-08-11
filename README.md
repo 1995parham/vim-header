@@ -1,18 +1,18 @@
 # vim-header
 ## Introduction
-Advance-Dummy source codes header generator based on python script and vim support :)
+Advance-Dummy source codes header generator based on neovim python client.
 
 ## VIM Configuration
-In order to use copyrighter vim plugin with
+In order to use vim-header plugin with
 [Plug plugin manager](https://github.com/junegunn/vim-plug)
-, add following comamnd in your vim configuration (vimrc):
+, add following comamnd in your neovim configuration (init.vim):
 
 ```viml
 Plug '1995parham/vim-header', {'do': ':UpdateRemotePlugins'}
 ```
 
-You must set your name and your email in your vim configuration (vimrc)
-for vim-header plugin as follows:
+You must set your name and your email in your vim configuration (init.vim)
+for vim-header plugin as follow:
 
 ```viml
 g:header_name = "Your Name"
@@ -20,26 +20,24 @@ g:header_email = "youremail@mail.com"
 ```
 
 ## Header Template Configuration
-You can create new header template for your language
-or modify existing ones. Our header template write with
-Velocity Template Language (VTL). see
-[here](http://velocity.apache.org/engine/devel/user-guide.html)
-for more details. Following table shows variables you have in
-VTL header.
+You can create new header template for your custom language
+or modify existing ones.
 
-| Variable      | Description     |
-|:-------------:|:---------------:|
-| `$user`       | User details    |
-| `$time`       | Datetime object |
-| `$file`       | Target file data|
+Following table shows variables you have in
+header template.
 
-for header template sample see *copyrighter/conf/header*
+| Variable     | Description     |
+|:------------:|:---------------:|
+| `user`       | User details    |
+| `time`       | Datetime object |
+| `file`       | Target filename |
+
+for header template sample see *conf/header*
 
 ## Dependencies
-You must have **python3** installed on your machine and you need
-[airspeed](https://github.com/purcell/airspeed)
-package installed on your python .. see :)
+* Neovim
+* Python3
 
 ## Contribution
-if you have time ... nothing else just time :) you can do what
-you want with this dummy project :)
+If you have time ... nothing else just time ... you can do what
+you want to do with this dummy neovim plugin. :joy:
