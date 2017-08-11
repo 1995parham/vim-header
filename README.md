@@ -1,19 +1,24 @@
 # vim-header
 ## Introduction
 Advance-Dummy source codes header generator based on python script and vim support :)
+
 ## VIM Configuration
 In order to use copyrighter vim plugin with
 [Plug plugin manager](https://github.com/junegunn/vim-plug)
 , add following comamnd in your vim configuration (vimrc):
+
 ```viml
-Plug '1995parham/vim-header', {'do': '~/.vim/plugged/vim-header/init.sh'}
+Plug '1995parham/vim-header', {'do': ':UpdateRemotePlugins'}
 ```
+
 You must set your name and your email in your vim configuration (vimrc)
 for vim-header plugin as follows:
+
 ```viml
-g:header_user = "Your Name"
+g:header_name = "Your Name"
 g:header_email = "youremail@mail.com"
 ```
+
 ## Header Template Configuration
 You can create new header template for your language
 or modify existing ones. Our header template write with
