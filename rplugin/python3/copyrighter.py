@@ -34,6 +34,25 @@ class CopyrighterPlugin:
                         'r')
                 self.headers[extension] = header
 
+    @neovim.command('Header', eval='@%')
+    def header_command(self, srcfile: str, sync=True):
+        '''
+        Provides header in existing file
+        '''
+        if os.path.splitext(srcfile)[-1] in self.headers:
+            extention_header = self.headers[os.path.splitext(srcfile)[-1]]
+            context = {}
+            context['user'] = User(name=self.nvim.eval('g:header_name'),
+                                   email=self.nvim.eval('g:header_email'))
+            context['file'] = srcfile
+            context['time'] = datetime.datetime.now()
+
+            lines = [l.format(**context) for l in
+                     extention_header.read().splitlines()]
+            self.nvim.current.buffer.append(lines, 0)
+
+            extention_header.seek(0)
+
     @neovim.autocmd('BufNewFile', pattern=r'*',
                     eval='expand("<afile>")', sync=True)
     def on_bufnew(self, srcfile: str):
@@ -55,4 +74,5 @@ class CopyrighterPlugin:
                 self.nvim.current.buffer[-1] = line
                 self.nvim.current.buffer.append('')
                 i += 1
+            extention_header.seek(0)
             self.nvim.current.window.cursor = (i, 0)
