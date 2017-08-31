@@ -1,9 +1,9 @@
 /*
  * +===============================================
- * | Author:        $user.name ($user.email)
+ * | Author:        {user.name} <{user.email}>
  * |
- * | Creation Date: $time.strftime("%d-%m-%Y")
+ * | Creation Date: {time:%d-%m-%Y}
  * |
- * | File Name:     $file.name
+ * | File Name:     {file}
  * +===============================================
  */
