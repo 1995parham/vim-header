@@ -4,6 +4,7 @@ python:
 install:
   - pip install -r dev-requirements.txt
   - eval "$(curl -Ss https://raw.githubusercontent.com/neovim/bot-ci/master/scripts/travis-setup.sh) nightly-x64"
+  - pip install neovim
 script:
   - pytest rplugin
-  - flake8 --statistics --verbose *.py
+  - flake8 --statistics --verbose rplugin/python3/*.py
