@@ -40,6 +40,12 @@ class CopyrighterPlugin:
         '''
 
         context = {}
+
+        context['='] = '='
+        context['-'] = '-'
+        context['*'] = '*'
+        context['#'] = '#'
+
         context['user'] = User(name=self.nvim.eval('g:header_name'),
                                 email=self.nvim.eval('g:header_email'))
         context['file'] = os.path.basename(srcfile)
