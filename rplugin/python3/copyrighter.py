@@ -47,12 +47,11 @@ class CopyrighterPlugin:
         context['#'] = '#'
 
         context['user'] = User(name=self.nvim.eval('g:header_name'),
-                                email=self.nvim.eval('g:header_email'))
+                               email=self.nvim.eval('g:header_email'))
         context['file'] = os.path.basename(srcfile)
         context['time'] = datetime.datetime.now()
 
         return context
-
 
     @neovim.command('Header', eval='@%')
     def header_command(self, srcfile: str, sync=True):
