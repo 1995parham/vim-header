@@ -1,5 +1,5 @@
 **
-* Author: $user.name ($user.email)
-* Create Date: $time.strftime("%d-%m-%Y")
-* File Name: $file.name
+* Author: {user.name} ({user.email})
+* Create Date: {time:%d-%m-%Y}
+* File Name: {file}
 **

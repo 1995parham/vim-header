@@ -1,5 +1,5 @@
 #!/bin/
-# In The Name Of God
+# In The Name of God
 # ========================================
 # [] File Name : {file}
 #

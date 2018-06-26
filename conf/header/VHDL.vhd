@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
--- Author:        $user.name ($user.email)
+-- Author:        {user.name} ({user.email})
 --
--- Create Date:   $time.strftime("%d-%m-%Y")
--- Module Name:   $file.name
+-- Create Date:   {time:"%d-%m-%Y"}
+-- Module Name:   {file}
 --------------------------------------------------------------------------------

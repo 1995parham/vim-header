@@ -1,13 +1,13 @@
 /*
- * In The Name Of God
- * ========================================
- * [] File Name : $file.name
+ * In The Name of God
+ * {=:=^39}
+ * [] File Name : {file}
  *
- * [] Creation Date : $time.strftime("%d-%m-%Y")
+ * [] Creation Date : {time:%d-%m-%Y}
  *
- * [] Created By : $user.name ($user.email)
- * =======================================
+ * [] Created By : {user:name} ({user:email})
+ * {=:=^39}
 */
 /*
- * Copyright (c) $time.strftime("%Y") $user.name.
+ * Copyright (c) {time:%Y} {user.name}.
 */
