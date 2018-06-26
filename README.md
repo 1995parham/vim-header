@@ -24,18 +24,20 @@ g:header_email = "youremail@mail.com"
 
 ## Header Template Configuration
 You can create new header template for your custom language
-or modify existing ones.
+or modify existing ones. template language is based on [python
+format](https://docs.python.org/3/library/string.html#formatspec).
 
 Following table shows variables you have in
 header template.
 
 | Variable     | Description     |
 |:------------:|:---------------:|
+| `*` `-` `=`  | Symbols         |
 | `user`       | User details    |
 | `time`       | Datetime object |
 | `file`       | Target filename |
 
-for header template sample see *conf/header*
+for header template samples see [conf/header](conf/header)
 
 ## Dependencies
 * Neovim
