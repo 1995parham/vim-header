@@ -34,6 +34,20 @@ class CopyrighterPlugin:
                         'r')
                 self.headers[extension] = header
 
+    def _context(self, srcfile: str):
+        '''
+        Fills context for creating header
+        '''
+
+        context = {}
+        context['user'] = User(name=self.nvim.eval('g:header_name'),
+                                email=self.nvim.eval('g:header_email'))
+        context['file'] = os.path.basename(srcfile)
+        context['time'] = datetime.datetime.now()
+
+        return context
+
+
     @neovim.command('Header', eval='@%')
     def header_command(self, srcfile: str, sync=True):
         '''
@@ -41,11 +55,8 @@ class CopyrighterPlugin:
         '''
         if os.path.splitext(srcfile)[-1] in self.headers:
             extention_header = self.headers[os.path.splitext(srcfile)[-1]]
-            context = {}
-            context['user'] = User(name=self.nvim.eval('g:header_name'),
-                                   email=self.nvim.eval('g:header_email'))
-            context['file'] = srcfile
-            context['time'] = datetime.datetime.now()
+
+            context = self._context(srcfile)
 
             lines = [l.format(**context) for l in
                      extention_header.read().splitlines()]
@@ -62,11 +73,8 @@ class CopyrighterPlugin:
         '''
         if os.path.splitext(srcfile)[-1] in self.headers:
             extention_header = self.headers[os.path.splitext(srcfile)[-1]]
-            context = {}
-            context['user'] = User(name=self.nvim.eval('g:header_name'),
-                                   email=self.nvim.eval('g:header_email'))
-            context['file'] = srcfile
-            context['time'] = datetime.datetime.now()
+
+            context = self._context(srcfile)
 
             i = 1
             for line in extention_header.read().splitlines():
