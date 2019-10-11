@@ -5,7 +5,7 @@
  *
  * [] Creation Date : {time:%d-%m-%Y}
  *
- * [] Created By : {user:name} ({user:email})
+ * [] Created By : {user.name} ({user.email})
  * {=:=^39}
 */
 /*
